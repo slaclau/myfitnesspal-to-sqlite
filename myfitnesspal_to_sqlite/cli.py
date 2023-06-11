@@ -37,7 +37,7 @@ def diary(db_path, user, date, measurement):
     date = datetime.fromisoformat(date).date()
 
     db = sqlite_utils.Database(db_path)
-    client = myfitnesspal.Client(user)
+    client = myfitnesspal.Client()
     diary_entry = utils.fetch_diary_entry(date, client, measurement)
 
     utils.save_diary_entry(db, diary_entry)
