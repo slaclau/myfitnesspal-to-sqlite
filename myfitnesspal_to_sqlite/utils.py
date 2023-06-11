@@ -56,7 +56,6 @@ VIEWS = {
                g.protein as goal_protein,
                g.sodium as goal_sodium,
                g.sugar as goal_sugar,
-               dm2.weight,
                de.total_exercise_minutes,
                de.total_calories_burned
         from diary_entries d
