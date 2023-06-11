@@ -332,6 +332,6 @@ def ensure_db_shape(db):
     existing_tables = set(db.table_names())
     for view, (tables, sql) in VIEWS.items():
         # Do all of the tables exist?
-        if not tables.issubset(existing_tables):
-            continue
+        # if not tables.issubset(existing_tables):
+        #    continue
         db.create_view(view, sql, replace=True)
