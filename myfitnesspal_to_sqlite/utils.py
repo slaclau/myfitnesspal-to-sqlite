@@ -50,7 +50,6 @@ VIEWS = {
                dt.total_protein,
                dt.total_sodium,
                dt.total_sugar,
-               dm2.weight,
                g.calories as goal_calories,
                g.carbohydrates as goal_carbohydrates,
                g.fat as goal_fat,
