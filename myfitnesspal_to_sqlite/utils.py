@@ -50,6 +50,7 @@ VIEWS = {
                dt.total_protein,
                dt.total_sodium,
                dt.total_sugar,
+               dm2.weight,
                g.calories as goal_calories,
                g.carbohydrates as goal_carbohydrates,
                g.fat as goal_fat,
@@ -102,13 +103,7 @@ VIEWS = {
             group by d.date
         ) dt on dt.date = d.date
         left join goals g on g.diary_entry = d.id
-        left join (
-            select d.date,
-                   avg(case when m.name = 'Weight' then value end) as weight
-            from measurement_entry_items m
-            left join diary_entries d on d.id = m.diary_entry
-            group by d.date
-        ) dm2 on dm2.date = d.date
+        
         left join (
             select d.date,
                    sum(e.minutes) as total_exercise_minutes,
