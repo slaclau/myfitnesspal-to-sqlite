@@ -30,7 +30,7 @@ def cli():
 @click.option(
     "--measurement",
     multiple=True,
-    required=True,
+    required=False,
 )
 def diary(db_path, user, date, measurement):
     "Save food, exercise, goal, and measurement entries for a given user and date"
